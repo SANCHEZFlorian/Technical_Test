@@ -39,7 +39,10 @@ First, I receive the technical test the 23/08/2022, at, approximatly, 4pm.
 If I say that, it's because I will write here what I did every day.  
 And second information : I was in training from 9 a.m. to 5 p.m. on weekdays, and with a part-time job _(21 hours a week)_ in the evenings _(usually from 6 p.m. to 11 p.m.)_ and weekends. So I did this project on my remaining time, as well as on a few hours of training _(I know, it's not good, but shh ;) )_. This information is just for say I don't work on this project 8 hours a day.  
 
-So, let's go ! ;### 23/08/2022 : Start to get some videos and documentation of Laravel
+So, let's go !  
+
+### 23/08/2022 : Start to get some videos and documentation of Laravel
+
 I found [this playlist](https://www.youtube.com/playlist?list=PLeeuvNW2FHVj4vHJRj9UDeDsXshHlnHJk) and start to watch this, the 2 first episod.  
 I install Laragon for pre-built my environment.  
 I'm on Windows for know.  
@@ -106,7 +109,7 @@ And I also name my route for re-applied every where I need and for change easely
 This day, I don't continue the playlist of [Nord Corders](https://www.youtube.com/c/NordCoders), because I want to write the code of connexion and retrieve my data from the database.  
 
 So first, I review the code of a project with my school _([O'Clock](https://oclock.io/))_. I remember PDO and PDOstatement, and I search how use it, or a different way, in Laravel.  
-And I found 2 ways : 
+And I found 2 ways :  
 - Use PDO
 - Use Eloquent
 
