@@ -29,7 +29,9 @@ So, let's do it !
 - [Laragon](https://laragon.org/), for a configuration of my environment to Laravel
 - YouTube for learn Laravel with video _(I used [this playlist](https://www.youtube.com/playlist?list=PLeeuvNW2FHVj4vHJRj9UDeDsXshHlnHJk) from [Nord Coders](https://www.youtube.com/c/NordCoders))_
 - The official documentation of [Laravel](https://laragon.org/docs/)
+- The official documentation of [PHP](https://www.php.net/)
 - [Mocodo](http://www.mocodo.net/) for have an "official" visual of my data base
+- Code from my school [O'Clock](https://oclock.io/) I used
 
 
 ## The different stages of creation :
@@ -80,3 +82,46 @@ I thing about my error, and I decide to reinstall Laragon. I had WAMP before, an
 
 And I found one solution for my foreign key :  
 I don't know why, but create the table, and after alter this table for add the constraint of foreign key make my problem. So I try to add my foreign key directly on the creation of the table and it's work !  
+
+### 27/08/2022 : Not very work
+
+I admit it, I don't work this day on the project, because of lack of time :/  
+
+### 28/08/2022 : Reinstall Laragon and start to learn
+
+So, this day, I reinstall Laragon and configure it for create a project with Laravel 8.0.
+First, I need to configure the quick action for create a project for specify the version of Laravel. I found how by looking at the config file and finding the composer command for Laravel 8.0.  
+After this, I import my database in phpMyAdmin. It's OK, it's working. I have my differents tables and data _(I put 5 estate agents and 10 fake estate ad for testing)_.  
+
+I continue to wath the YouTube playlist from [Nord Corders](https://www.youtube.com/c/NordCoders) for learn Laravel.
+I create TestController and Test Blade view for apply what I learn, and for now, I understand all I have. I think about PDO I learned from my formation on O'Clock, and I thing about I really need to review this for the futur. But first, I continue the video, and watch about controllers and view with blade.  
+
+I create the layout for the views, and I test a lot of thing for give array with data for the view. All works, with a little of test because I just learn and I make some wrong thing, like forget ";" or wrong route, etc. But it work, and somewhere, I'm proud of me, I recognize, because it's a little success, but a success.  
+
+I create also the partials template for add, for exemple, the navbar.  
+And I also name my route for re-applied every where I need and for change easely my route or controllers without change all the files where route are specified.  
+
+### 29/08/2022 : Search for PDO
+
+This day, I don't continue the playlist of [Nord Corders](https://www.youtube.com/c/NordCoders), because I want to write the code of connexion and retrieve my data from the database.  
+
+So first, I review the code of a project with my school _([O'Clock](https://oclock.io/))_. I remember PDO and PDOstatement, and I search how use it, or a different way, in Laravel.  
+And I found 2 ways : 
+- Use PDO
+- Use Eloquent
+
+So, I have difficult choice to make..... So I take the 2 way ! :D  
+So, first, I will try with PDO.  
+And after, I will try with Eloquent.  
+And if all 2 way works, I will just comment one of them. But I want to prove I can do the 2 way.  
+And because I don't have many time, I start with PDO.  
+If it's work, I finish the project. Because it's _"only"_ create, update or delete an estate ad. And in bonuse, filter by price or living surface. After I do all of this, I will work on Eloquent and esthetic.  
+
+So, let's do it !  
+
+Before, I need to read the documentation of Laravel about [database](https://laravel.com/docs/8.x/database).  
+
+So, now, I configure the .env file with my database name and conenct it. But I have an error of "htmlspecialchars() expects parameter 1 to be string, object given". So I know the problem is I give an object and not a string, but I need to fix it.  
+
+I watch a lot of videos too, and I see we have "php artisan" for create table, delete, and all, but because I write the database, I want to just connect and read the database. Not to create the database or table with php artisan.  
+So, I need to fix it tomorrow, now it's time to go to bed ;)  
