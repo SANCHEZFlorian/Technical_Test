@@ -39,6 +39,8 @@ First, I receive the technical test the 23/08/2022, at, approximatly, 4pm.
 If I say that, it's because I will write here what I did every day.  
 And second information : I was in training from 9 a.m. to 5 p.m. on weekdays, and with a part-time job _(21 hours a week)_ in the evenings _(usually from 6 p.m. to 11 p.m.)_ and weekends. So I did this project on my remaining time, as well as on a few hours of training _(I know, it's not good, but shh ;) )_. This information is just for say I don't work on this project 8 hours a day.  
 
+N.B.: My project is create by Laragon, so the path isn't the same of my folder where I push on GitHub. So I just copy the project at the end on this folder.  
+
 So, let's go !  
 
 ### 23/08/2022 : Start to get some videos and documentation of Laravel
@@ -128,3 +130,36 @@ So, now, I configure the .env file with my database name and conenct it. But I h
 
 I watch a lot of videos too, and I see we have "php artisan" for create table, delete, and all, but because I write the database, I want to just connect and read the database. Not to create the database or table with php artisan.  
 So, I need to fix it tomorrow, now it's time to go to bed ;)  
+
+### 30/08/2022 : I'm stuck... and change my way to Eloquent  
+
+N.B.: My project is create by Laragon, so the path isn't the same of my folder where I push on GitHub. So I just copy the project at the end on this folder.  
+
+So, I'm stuck. It's hard, but i admid it.  
+I don't have many time, so I decide to use php artisan and other, instead of use my know with PDO and over. I just want to finish the project before the deadline come, and if I have time, I will see what I do _(esthetic, over filter or repare my problem with other way)_.  
+
+I continue the [Nord Corders playlist](https://www.youtube.com/playlist?list=PLeeuvNW2FHVj4vHJRj9UDeDsXshHlnHJk) for understand how make factories, seeders and models.  
+I create a model for estate agent and estate ad. So php artisan make with this a migration for each.  
+But, when I make migration, I have some error with the default migration of user, failed job, and password reset _(SQLSTATE[42000]: Syntax error or access violation: 1071 La clé est trop longue. Longueur maximale: 1000 (SQL: alter table `failed_jobs` add unique `failed_jobs_uuid_unique`(`uuid`)))_. 
+So I just delete this migration.  
+After this, my migration of agent and ad work.  
+
+I learn I use Eloquent for this, so it's good, not my first  choice, but I want my project work.  
+So I add the function data() to my TestController, and I see with the function dd() I retrieve my data of agent. Continue to watch and learn with the doc for learn how see my data.  
+But just now, I'm very happy, because I didn't have error, and my route work well with my controller for now :D  
+Ok, I'm very very very happy : I list of all ad in my page :D I see all of my ad !! YES !!  
+Ok, so I have the R of CRUD, but I need the C,U,D of CRUD. Let's do it !  
+
+I add a link on the ad reference for display a new page with the information of the ad, and modify them or delete the ad. And the link is work !  
+Ok, ok, I need to calm down. But I'm very proud of what I do, because it's a new framework for me, and I admit, if I want to be a web developper, it's because the sensation of proud and satisfaction when you have finally what you want.  
+
+Oh, I push my project now on the folder "3gimmo". So you can now read the code I make. I comment in French, because it's for a french job, but after, if I have time, I will translate in english.  
+I comment more in my test files, like TestController, testAgent.blade, testAnnonce.blade and other. But I comment too the other files, but less than the test files.  
+
+### 31/08/2022 : Create an estate ad  
+
+I start to create the feature to add an estate ad. So I create the view, the route, and modify my AdController.  
+But I have one problem for now : Because my field of agent_ID don't have a default value, and because I didn't configure the foreign key, I can't create an ad. So I create the creation of an estate agent. And it's work ! :D  
+I continue to watch video of [Nord Corders playlist](https://www.youtube.com/playlist?list=PLeeuvNW2FHVj4vHJRj9UDeDsXshHlnHJk), for found how can I create correctly my table estate ad with my foreign key agent_ID.  
+
+N.B.: I didn't very sleep for work on this project, so I update the files now, and continue in the day ;)  
