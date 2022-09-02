@@ -19,7 +19,9 @@ class CreateAnnoncesTable extends Migration
             $table->float('prix_annonce');
             $table->float('surface_habitable');
             $table->integer('nombre_de_piece');
-            $table->foreignId('agent_ID');
+            // $table->foreignId('agent_ID')->constrained();
+            $table->unsignedBigInteger('agent_ID');
+            $table->foreign('agent_ID')->references('id')->on('agents');
             $table->timestamps();
         });
     }

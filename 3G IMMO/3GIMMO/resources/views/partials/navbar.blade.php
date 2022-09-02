@@ -5,7 +5,9 @@
 
 <ul>
 {{-- Le  {{ route('accueil') }} est possible car on a donné un nom dans le fichier des routes à cette route --}}
-<li><a href="{{ route('accueil') }}">Accueil</a></li>
+<li><a href="{{ route('listAd') }}">Accueil</a></li>
+<li><a href="{{ route('listAgent') }}">Agents</a></li>
+
 </ul>
 
 <h3>/!\ TEST /!\ Route de test /!\ TEST /!\</h3>

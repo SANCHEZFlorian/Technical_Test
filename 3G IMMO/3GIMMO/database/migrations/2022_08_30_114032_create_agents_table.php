@@ -16,7 +16,7 @@ class CreateAgentsTable extends Migration
     public function up()
     {
         Schema::create('agents', function (Blueprint $table) {
-            $table->id();
+            $table->id('agent_ID');
             $table->string('nom_agent');
             $table->string('prenom_agent');
             $table->timestamps();

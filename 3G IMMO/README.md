@@ -33,6 +33,13 @@ So, let's do it !
 - [Mocodo](http://www.mocodo.net/) for have an "official" visual of my data base
 - Code from my school [O'Clock](https://oclock.io/) I used
 
+## What the project learn me :  
+
+- A new technology : Laravel
+- A new vision : Before this project, I was sure I just want to develop in JavaScript, Front and Back. But I realize I like PHP too, and Laravel too
+- An improve of my english : Yes, because I write this readme in english, and no just translate. Of course, I use translator when I was stuck in my word. But it improve my english and selftrust for write in english
+- The proof I can learn and develop with technology I never code
+- Use Trello more time, even for a "small" project
 
 ## The different stages of creation :
 First, I receive the technical test the 23/08/2022, at, approximatly, 4pm.  
@@ -163,3 +170,75 @@ But I have one problem for now : Because my field of agent_ID don't have a defau
 I continue to watch video of [Nord Corders playlist](https://www.youtube.com/playlist?list=PLeeuvNW2FHVj4vHJRj9UDeDsXshHlnHJk), for found how can I create correctly my table estate ad with my foreign key agent_ID.  
 
 N.B.: I didn't very sleep for work on this project, so I update the files now, and continue in the day ;)  
+So, I continue. I will update an estate agent, for understnd the process. And after, I will see how delete an estate agent.  
+And after all, I will search for the foreign key on my table estate ad.  
+Before all, I just add view for say when agent was created.  
+
+So, for the update, I will create on my page where we can see a specific agent a form with new input and a button for submit the modification.  
+But first, I will modify my folder of view. I have a lot of view, and I decide to reorganize with a folder "test", "ad" and "estate" for more lisibility.  
+I see I have an error because he didn't find the view. So I review my code, and I think it's come from the controller. I just need to add the folder in the view, so now, I have like  
+
+``` php
+return view('ad/Ad', [
+    'title' => $title,
+    'annonce' => $annonce
+]);
+```
+
+Before I just have this, because the view was in the folder view:  
+
+``` php
+return view('Ad', [
+    'title' => $title,
+    'annonce' => $annonce
+]);
+```
+
+I also reorganize my code of controllers and routes, for more lisibility, and add function on ad controller and agent controller who come from the testcontroller.  
+I test when I add nothing for modification or creation, and I have an error _(yeah, logic)_. I need to fix it, but after the CRUD of ad.  
+
+### 01/09/2022 : Last day
+
+So this day is my last day for the project.  
+For achieve the project, I need to have :  
+
+- Create an ad
+- Modify an ad
+- Delete an ad
+- Ad must be lock with one agent and only one
+
+So, I need to fix the problem with the foreign key, and add the function of delete an ad, because I already have the view and function controller for create and modify.  
+I try to modify an agent, but I'm stuck.  
+
+Ok, I found my problem for modify an agent :  
+I use ::where for search the agent to modify, and for this, I use `$request->nom_agent`. BUT ! When I send the information, the "nom_agent" change to the new "nom_agent", and I need the older name.  
+So I thing I go to use the ID of the agent.  
+YEAH ! It work !  
+So I use the Request, but also the ID in the URL.  
+Let's start the delete of an agent.  
+And I used the same method for found the agent who we want to delete _(with ID in the URL)_ and it work !  
+
+Now, I need to do all this things for an ad.  
+First, I add list of agent for create and modify ad, for choose who agent is on the ad.  
+After, I reorganize my route for the ad like I organized my route for agent. Same for the controller.  
+So now, I can read the database of estate ad, and delete an ad.  
+But I need to know how modify and ad, or create an ad, but for this, I need to establish correctly the foreign key.  
+
+So I try to reset my database, add the foreign key, and migrate. But I have an error _(again)_. This error is :  
+`SQLSTATE[HY000]: General error: 1215 Cannot add foreign key constraint (SQL: alter table annonces add constraint annonces_agent_id_foreign foreign key (agent_ID) references agent_IDs (id))`
+I used `$table->foreignId('agent_ID')->constrained();` in my table of ad. 
+And if I use  
+
+```php
+$table->unsignedBigInteger('agent_ID');
+$table->foreign('agent_ID')->references('id')->on('agents');
+```
+
+I have the same error. 
+But I haven't time, so I thing I send my project like this, with information about my error, and I continue to work on this error, because I want to find the solution.
+
+## List of potentiel future feature :
+
+- Confirmation message when we press "delete" for ad and estate
+- New type of input for more semantic _(like number for price)_
+- CSS for esthetic

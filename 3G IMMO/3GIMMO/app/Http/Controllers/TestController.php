@@ -21,7 +21,7 @@ class TestController extends Controller
             '/!\ TEST /!\ deuxième index'
         ];
 
-        return view('test', compact('title', 'title2', 'tableau'));
+        return view('test/test', compact('title', 'title2', 'tableau'));
 
         //* On peut aussi utiliser :
         // return view('test')->with('title', $title);
@@ -41,10 +41,11 @@ class TestController extends Controller
             2 => '/!\ TEST /!\ Annonce 2'
         ];
 
+        //* Expression ternaire qui permet d'envoyer une string si l'annonce n'existe pas
         $annonce = $annonces[$id] ?? 'L\'annonce /!\ TEST /!\ n\'existe pas';
         $title = $annonce;
 
-        return view('testAnnonce', [
+        return view('test/testAnnonce', [
             'title' => $title,
             'annonce' => $annonce
         ]);
@@ -58,7 +59,7 @@ class TestController extends Controller
     // {
     //     $agents = DB::select('SELECT * FROM agents');
 
-    //     return view('testAgent', [
+    //     return view('test/testAgent', [
     //         'agents' => $agents
     //     ]);
     // }
@@ -73,20 +74,23 @@ class TestController extends Controller
         //* Donnera tout les agents trier par ordre alphabétique du nom des agents
 
         // dd($agents);
-        return view('testAgent', [
+        return view('test/testAgent', [
             'agents' => $agents,
             'title' => $title
         ]);
     }
 
+
+    //* Fonction pour renvoyé la vue de la page de création d'un agent
     public function create()
     {
         $title = 'Création d\'un nouvel agent';
-        return view('addAgent', [
+        return view('agent/addAgent', [
             'title' => $title
         ]);
     }
 
+    //* Fonction qui créera un nouvel agent dans la table agents
     public function save(Request $request)
     {
         // dd($request);
@@ -103,6 +107,18 @@ class TestController extends Controller
         //     'nom_agent' => $request->nom_agent,
         //     'prenom_agent' => $request->prenom_agent
         // ]);
+
+        $nom_agent = $agent->nom_agent;
+        return view('agent/addAgentOk', [
+            'title' => 'Agent ajouté !',
+            'nom_agent' => $nom_agent
+        ]);
+    }
+
+    //* Test de fonction pour modifier un agent déjà créer
+    public function update(Request $request)
+    {
+        
     }
 
 
